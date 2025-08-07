@@ -9,6 +9,18 @@ function App() {
 
   function Puluhan() {
     const angka = nomer
+    const pembulatan = Math.round(angka / 100) * 100;
+    setHasil(pembulatan);
+  }
+
+  function Ratusan() {
+    const angka = nomer
+    const pembulatan = Math.round(angka / 1000) * 1000;
+    setHasil(pembulatan);
+  }
+
+  function Ribuan() {
+    const angka = nomer
     const pembulatan = Math.round(angka / 10) * 10;
     setHasil(pembulatan);
   }
@@ -21,8 +33,8 @@ function App() {
         <input type='number' placeholder='masukkan angka' value={nomer} onChange={(e) => {setNomer(e.target.value)}}/>
         <div className='button-container'>
           <button onClick={Puluhan}>Puluhan</button>
-          <button>Ratusan</button>
-          <button>Ribuan</button>
+          <button onClick={Ratusan}>Ratusan</button>
+          <button onClick={Ribuan}>Ribuan</button>
         </div>
         <div className='result-container'>
           <h1>Result :  </h1>
