@@ -9,19 +9,19 @@ function App() {
 
   function Puluhan() {
     const angka = nomer
-    const pembulatan = Math.round(angka / 100) * 100;
+    const pembulatan = Math.round(angka / 10) * 10;
     setHasil(pembulatan);
   }
 
   function Ratusan() {
     const angka = nomer
-    const pembulatan = Math.round(angka / 1000) * 1000;
+    const pembulatan = Math.round(angka / 100) * 100;
     setHasil(pembulatan);
   }
 
   function Ribuan() {
     const angka = nomer
-    const pembulatan = Math.round(angka / 10) * 10;
+    const pembulatan = Math.round(angka / 1000) * 1000;
     setHasil(pembulatan);
   }
 
