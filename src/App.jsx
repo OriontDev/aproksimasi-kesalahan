@@ -1,0 +1,36 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+
+function App() {
+  const [nomer, setNomer] = useState(0)
+  const [hasil, setHasil] = useState(0)
+
+
+  function Puluhan() {
+    const angka = nomer
+    const pembulatan = Math.round(angka / 10) * 10;
+    setHasil(pembulatan);
+  }
+
+
+  return (
+    <>
+      <div className='everything-container'>
+        <h1>Title</h1>
+        <input type='number' placeholder='masukkan angka' value={nomer} onChange={(e) => {setNomer(e.target.value)}}/>
+        <div className='button-container'>
+          <button onClick={Puluhan}>Puluhan</button>
+          <button>Ratusan</button>
+          <button>Ribuan</button>
+        </div>
+        <div className='result-container'>
+          <h1>Result :  </h1>
+          <h1>{hasil}</h1>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default App

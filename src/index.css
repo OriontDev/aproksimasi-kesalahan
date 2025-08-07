@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(131, 131, 131);
+}
+
+.everything-container{
+  background-color: rgb(73, 73, 73);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  border: solid white 5px;
+  border-radius: 5px;
+  width: 80vw;
+  justify-self: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.everything-container input{
+  font-size: 1.5rem;
+}
+
+.button-container{
+  display: flex;
+  gap: 10px;
+}
+
+.button-container button{
+  border: solid 3px white;
+  border-radius: 10px;
+  background-color: rgb(185, 185, 185);
+}
+
+.result-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
