@@ -13,7 +13,6 @@ body {
   border: solid rgb(255, 153, 0) 5px;
   border-radius: 5px;
   width: 80vw;
-  max-width: ;
   justify-self: center;
   flex-direction: column;
   gap: 10px;
