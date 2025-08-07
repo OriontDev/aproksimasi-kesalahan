@@ -29,7 +29,9 @@ function App() {
   return (
     <>
       <div className='everything-container'>
-        <h1>Title</h1>
+        <div className='title-container'>
+          <h1 className='title-text'>Pembulatan Satuan</h1>
+        </div>
         <input type='number' placeholder='masukkan angka' value={nomer} onChange={(e) => {setNomer(e.target.value)}}/>
         <div className='button-container'>
           <button onClick={Puluhan}>Puluhan</button>
@@ -39,6 +41,9 @@ function App() {
         <div className='result-container'>
           <h1>Result :  </h1>
           <h1>{hasil}</h1>
+        </div>
+        <div className='explanation-container'>
+          <h2 className='explanation'>Pembulatan ke satuan puluhan, ratusan, dan ribuan adalah proses mendekatkan angka ke nilai terdekat berdasarkan digit tertentu. Pada pembulatan ke puluhan, kita melihat angka satuan: jika 5 atau lebih maka puluhan dinaikkan, jika kurang dari 5 tetap. Pada pembulatan ke ratusan, angka puluhan yang jadi acuan: jika 50 atau lebih maka ratusan dinaikkan, jika kurang dari 50 tetap. Sedangkan pada pembulatan ke ribuan, kita melihat angka ratusan: jika 500 atau lebih maka ribuan dinaikkan, jika kurang dari 500 tetap.</h2>
         </div>
       </div>
     </>
