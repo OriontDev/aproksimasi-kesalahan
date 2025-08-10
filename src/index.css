@@ -1,51 +1,63 @@
 body {
-  background-color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+#root {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   --primary: #FCF6B1;
   --secondary: #2D1E2F;
   --accent0: #F7B32B;
   --accent1: #E3170A;
+  background-color: var(--primary);
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  place-items: center;
 }
 
-.everything-container{
-  background-color: var(--primary);
+.everything-container {
+  padding: 2rem;
+  margin: 0 auto;
+  width: 42rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  /* border: solid rgb(255, 153, 0) 5px; */
-  /* border-radius: 5px; */
-  width: 100vw;
-  justify-self: center;
+  flex-direction: row;
+  gap: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.converter-container{
+  width: 100%;
+  display: flex;
   flex-direction: column;
+  place-items: center;
   gap: 10px;
 }
 .title-text{
-  font-family: "jsMath-cmr10", Courier;
-  font-weight: 600;
+  font-family: "Abril Fatface", serif;
+  font-weight: 200;
   letter-spacing: 3px;
   font-size: 3rem;
   /* TODO: DESKTOP LAYOUT */
-  text-align: center;
   margin: 0;
   color: var(--secondary);
 }
 .subtitle-text {
   margin: 0 0 20px 0;
-  font-family: "jsMath-cmmi10", Courier;
-  font-weight: 100;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   color: var(--accent0);
   width: 100%;
-  text-align: center;
 }
 .title-container{
   width: 100%;
 }
 
 input {
-  font-family: "jsMath-cmmi10", Courier;
+  font-family: "Quicksand", sans-serif;
   border: none;
   border-radius: 8px;
   font-size: 1.5rem;
@@ -60,18 +72,22 @@ input {
 }
 
 .button-container button{
-  font-family: "jsMath-cmmi10", Courier;
+  font-family: "Quicksand", sans-serif;
   padding: 8px;
   background-color: transparent;
   color: var(--accent0);
   border: solid 2px var(--accent0);
   border-radius: 5px;
   font-size: 1.35rem;
+  transition: all 100ms;
 }
 
 .button-container button:hover{
   background-color: var(--accent0);
   color: var(--primary);
+}
+.button-container button:active{
+  transform: scale(0.925);
 }
 
 .result-container{
@@ -82,21 +98,25 @@ input {
 }
 
 .result-container h1 {
+  margin-top: -1rem; /* bitchass hack */
   font-size: 5rem;
-  height: 20%;
   color: var(--accent0);
 }
 .result-container h2 {
+  font-family: "Quicksand", sans-serif;
   font-size: 2rem;
-  font-weight: 500;
-  height: 20%;
+  font-weight: 700;
   color: var(--secondary);
 }
 .result-container * {
   /* TODO: DESKTOP LAYOUT */
-  font-family: "jsMath-cmmi10", Courier;
-  text-align: center;
+  font-family: "Abril Fatface", serif;
   margin: 0;
+}
+
+hr {
+  border: none;
+  border-left: solid var(--accent1) 1px;
 }
 
 .explanation-container{
@@ -104,12 +124,11 @@ input {
 }
 
 .explanation{
-  font-family: "jsMath-cmr10", Courier;
+  font-family: "Quicksand", sans-serif;
   margin: 0px;
-  letter-spacing: 0.5px; /* wtf??? */
-  font-weight: 200;
+  font-weight: 400;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.09rem;
 }
 
 @media (min-width: 901px) {
