@@ -25,9 +25,18 @@ export default function App() {
     setHasil(pembulatan);
   }
 
+  function Satuan() {
+    const angka = Number(nomer);
+    const pembulatan = Math.round(angka);
+    setHasil(pembulatan);
+  }
+
+
   const onInputChange = v => {
+    v = Number(v);
     v = v > 100000 ? 100000 : v;
-    setNomer(v);
+    v = Math.floor(v*10) / 10;
+    setNomer(v === 0 ? "" : v);
   };
 
   const toggleReveal = _ => setRevealIdentity(!revealIdentity);
@@ -45,6 +54,7 @@ export default function App() {
           </div>
           <input type='number' placeholder='Masukkan angka' value={nomer} onChange={(e) => {onInputChange(e.target.value)}}/>
           <div className='button-container'>
+            <button onClick={Satuan}>Satuan</button>
             <button onClick={Puluhan}>Puluhan</button>
             <button onClick={Ratusan}>Ratusan</button>
             <button onClick={Ribuan}>Ribuan</button>
