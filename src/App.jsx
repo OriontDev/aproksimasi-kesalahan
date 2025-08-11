@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BackgroundCanvas from './BackgroundCanvas';
 
 export default function App() {
   const [nomer, setNomer] = useState(0);
@@ -34,6 +35,7 @@ export default function App() {
 
   return (
     <>
+      <BackgroundCanvas />
       {<Identity onClick={toggleReveal} transparency={revealIdentity ? 1 : 0} revealed={revealIdentity} />}
       <div className='everything-container'>
         <div className='converter-container'>
