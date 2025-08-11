@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
 export default function App() {
-  const [nomer, setNomer] = useState(0)
-  const [hasil, setHasil] = useState(0)
+  const [nomer, setNomer] = useState(0);
+  const [hasil, setHasil] = useState(0);
+  const [revealIdentity, setRevealIdentity] = useState(false);
 
 
   function Puluhan() {
@@ -28,12 +29,15 @@ export default function App() {
     setNomer(v);
   };
 
+  const toggleReveal = _ => setRevealIdentity(!revealIdentity);
+
 
   return (
     <>
+      {<Identity onClick={toggleReveal} transparency={revealIdentity ? 1 : 0} revealed={revealIdentity} />}
       <div className='everything-container'>
         <div className='converter-container'>
-          <div className='title-container'>
+          <div className='title-container' onClick={toggleReveal}>
             <h1 className='title-text'>Aproksimasi<br/>Kesalahan</h1>
             <h1 className='subtitle-text'>Pembulatan Angka Satuan</h1>
           </div>
@@ -62,4 +66,18 @@ export default function App() {
   )
 }
 
-export default App
+function Identity({onClick, transparency, revealed}) {
+  return (
+    <div className='identity-bg' onClick={onClick} style={{ opacity:transparency, pointerEvents: revealed ? '' : 'none' }}>
+      <div className='container'>
+        <h1>Kelompok Pembuat</h1>
+        <p>I Wayan Widhyadana Sadhu Gunawan <span className='hg'>/ 15</span></p>
+        <p>Kadek Anggi Sekarsari <span className='hg'>/ 18</span></p>
+        <p>Made Oriont Fedora <span className='hg'>/ 24</span></p>
+        <p>Ni Luh Putu Devina Trisnasari Putri <span className='hg'>/ 30</span></p>
+        <p>Wahyudi Adhika Wijaya <span className='hg'>/ 40</span></p>
+        <p>Noviana Diva <span className='hg'>/ 43</span></p>
+      </div>
+    </div>
+  )
+}
