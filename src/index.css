@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #FCF6B1;
 }
 
 #root {
@@ -26,6 +27,8 @@ body {
   gap: 1rem;
   border-radius: 10px;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(252, 246, 177, 0.25);
 }
 
 .converter-container{
@@ -57,30 +60,36 @@ body {
 }
 
 input {
+  padding: 10px;
+  width: calc(100% - 20px);
   font-family: "Quicksand", sans-serif;
   border: none;
   border-radius: 8px;
   font-size: 1.5rem;
-  padding: 10px;
   background-color: var(--accent0);
-  color: rgba(45, 30, 47, 50)
+  color: rgba(45, 30, 47, 1);
+}
+input::placeholder {
+  color: rgba(45, 30, 47, 0.5);
 }
 
 .button-container{
-  display: flex;
-  justify-content: space-between;
+  display:grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100%;
 }
 
 .button-container button{
   font-family: "Quicksand", sans-serif;
-  padding: 8px 10px;
+  padding: 4px 6px;
   background-color: transparent;
   color: var(--accent0);
-  border: solid 2px var(--accent0);
+  border: solid 1.5px var(--accent0);
   border-radius: 5px;
-  font-size: 1.35rem;
+  font-size: 1.125rem;
   backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
   transition: all 100ms;
 }
 
@@ -111,7 +120,6 @@ input {
   color: var(--secondary);
 }
 .result-container * {
-  /* TODO: DESKTOP LAYOUT */
   font-family: "Abril Fatface", serif;
   margin: 0;
 }
@@ -141,6 +149,7 @@ hr {
   height: 100%;
   width: 100%;
   backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   transition: opacity 200ms;
 
   display: flex;
@@ -166,7 +175,9 @@ hr {
 }
 
 .background {
+  pointer-events: none;
   position: absolute;
+  border-radius: 15px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -175,5 +186,74 @@ hr {
 @media (max-width: 901px) {
   .everything-container {
     flex-flow: column;
+  }
+
+  .title-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .subtitle-text {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .explanation {
+    font-size: .75rem;
+  }
+  
+  .everything-container {
+    padding: 5px 15px;
+    gap: 0.5rem;
+    min-width: 10rem;
+    width: 75%;
+  }
+  .everything-container {
+    flex-direction: column;
+    place-items: center;
+  }
+  
+  input {
+    font-size: 1rem;
+    background-color: var(--accent0);
+    color: rgba(45, 30, 47, 50)
+  }
+
+  .button-container button{
+    font-size: .75rem;
+  }
+  
+  .result-container h1 {
+    margin-right: auto;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .result-container h2 {
+    margin-left: auto;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .result-container{
+    margin: 0;
+    gap: 10px;
+    flex-direction: row;
+    place-items: center;
+  }
+
+  hr {
+    margin: 0;
+    margin-top: -10px;
+    width: 100%;
+    height: 2px;
+    border: none;
+    border-top: solid var(--accent1) 1px;
+  }
+
+  .identity-bg > .container {
+    padding: 1.5rem;
+  }
+  .identity-bg > .container > h1 {
+    font-size: 1.5rem;
+  }
+  .identity-bg > .container > p {
+    font-size: .85rem;
   }
 }

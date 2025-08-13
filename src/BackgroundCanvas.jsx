@@ -17,16 +17,19 @@ export default function BackgroundCanvas({}) {
         };
         setCanvasSize();
         window.addEventListener('resize', setCanvasSize);
+        window.addEventListener('click', setCanvasSize);
+        window.addEventListener('scroll', setCanvasSize);
         
         const randomizeSquare = _ => {
             return {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
                 dy: (Math.random()) * 2 + 0.5,
-                size: (Math.random() + 0.1) * 100,
+                size: (Math.random() + 0.1) * (canvas.width < 500 ? 75 : 100),
             }
         }
-        let squares = Array.from({ length: 25 }, () => randomizeSquare());
+        const squaresCount = canvas.width < 500 ? 15 : 25;
+        let squares = Array.from({ length: squaresCount }, () => randomizeSquare());
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -42,8 +45,8 @@ export default function BackgroundCanvas({}) {
                 ctx.restore();
 
                 squares[i].y -= square.dy;
-                if (squares[i].y < -square.size-10) {
-                    squares[i] = randomizeSquare();
+                if (squares[i].y < -square.size-10 || squares[i].x > window.innerWidth || squares[i].x < 0) {
+                    squares[i] = randomizeSquare();p
                     squares[i].y = window.innerHeight
                 }
             }

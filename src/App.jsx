@@ -2,7 +2,7 @@ import { useState } from 'react'
 import BackgroundCanvas from './BackgroundCanvas';
 
 export default function App() {
-  const [nomer, setNomer] = useState(0);
+  const [nomer, setNomer] = useState("");
   const [hasil, setHasil] = useState(0);
   const [revealIdentity, setRevealIdentity] = useState(false);
 
