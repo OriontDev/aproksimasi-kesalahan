@@ -87,6 +87,7 @@ function Identity({onClick, transparency, revealed}) {
         <p>Kadek Anggi Sekarsari <span className='hg'>/ 18</span></p>
         <p>Made Oriont Fedora <span className='hg'>/ 24</span></p>
         <p>Ni Luh Putu Devina Trisnasari Putri <span className='hg'>/ 30</span></p>
+        <p>Ni Made Anggita Dwi Putri <span className='hg'>/ 31</span></p>
         <p>Wahyudi Adhika Wijaya <span className='hg'>/ 40</span></p>
         <p>Noviana Diva <span className='hg'>/ 43</span></p>
       </div>
