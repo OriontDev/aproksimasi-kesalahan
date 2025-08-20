@@ -46,7 +46,7 @@ export default function BackgroundCanvas({}) {
 
                 squares[i].y -= square.dy;
                 if (squares[i].y < -square.size-10 || squares[i].x > window.innerWidth || squares[i].x < 0) {
-                    squares[i] = randomizeSquare();p
+                    squares[i] = randomizeSquare();
                     squares[i].y = window.innerHeight
                 }
             }
