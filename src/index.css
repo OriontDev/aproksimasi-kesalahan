@@ -1,8 +1,10 @@
+/* Elemen utama halaman */
 body {
   margin: 0;
   background-color: #FCF6B1;
 }
 
+/* #root Container utama React */
 #root {
   font-family: "Abril Fatface", serif;
   margin: 0;
@@ -18,6 +20,7 @@ body {
   place-items: center;
 }
 
+/* Wadah pembungkus seluruh konten utama */
 .everything-container {
   padding: 2rem;
   margin: 0 auto;
@@ -31,6 +34,7 @@ body {
   background-color: rgba(252, 246, 177, 0.25);
 }
 
+/* Container bagian konversi */
 .converter-container{
   width: 100%;
   display: flex;
@@ -38,15 +42,16 @@ body {
   place-items: center;
   gap: 10px;
 }
+/* Judul utama aplikasi */
 .title-text{
   font-family: "Abril Fatface", serif;
   font-weight: 200;
   letter-spacing: 3px;
   font-size: 3rem;
-  /* TODO: DESKTOP LAYOUT */
   margin: 0;
   color: var(--secondary);
 }
+/* Subjudul aplikasi */
 .subtitle-text {
   margin: 0 0 20px 0;
   font-family: "Quicksand", sans-serif;
@@ -55,10 +60,12 @@ body {
   color: var(--accent0);
   width: 100%;
 }
+/* Wadah untuk judul */
 .title-container{
   width: 100%;
 }
 
+/* Style Kolom input teks */
 input {
   padding: 10px;
   width: calc(100% - 20px);
@@ -69,10 +76,12 @@ input {
   background-color: var(--accent0);
   color: rgba(45, 30, 47, 1);
 }
+/* Placeholder teks */
 input::placeholder {
   color: rgba(45, 30, 47, 0.5);
 }
 
+/* Wadah tombol */
 .button-container{
   display:grid;
   gap: 10px;
@@ -80,6 +89,7 @@ input::placeholder {
   width: 100%;
 }
 
+/* Tombol-tombol konversi */
 .button-container button{
   font-family: "Quicksand", sans-serif;
   padding: 4px 6px;
@@ -93,14 +103,17 @@ input::placeholder {
   transition: all 100ms;
 }
 
+/* Efek hover tombol */
 .button-container button:hover{
   background-color: var(--accent0);
   color: var(--primary);
 }
+/* Efek saat ditekan */
 .button-container button:active{
   transform: scale(0.925);
 }
 
+/* Wadah hasil konversi */
 .result-container{
   margin-top: 20px;
   width: 100%;
@@ -108,8 +121,9 @@ input::placeholder {
   flex-direction: column;
 }
 
+/* Penyesuaian ukuran dan posisi elemen di dalam waadah struktur hasil */
 .result-container h1 {
-  margin-top: -1rem; /* bitchass hack */
+  margin-top: -1rem;
   font-size: 5rem;
   color: var(--accent0);
 }
@@ -124,15 +138,18 @@ input::placeholder {
   margin: 0;
 }
 
+/* Garis pembatas */
 hr {
   border: none;
   border-left: solid var(--accent1) 1px;
 }
 
+/* Wadah penjelasan */
 .explanation-container{
   padding: 0px 10px 10px 10px;
 }
 
+/* Teks penjelasan */
 .explanation{
   font-family: "Quicksand", sans-serif;
   margin: 0px;
@@ -141,6 +158,7 @@ hr {
   font-size: 1.09rem;
 }
 
+/* Overlay identitas (mungkin pop-up/keterangan) */
 .identity-bg {
   z-index: 999;
   position: absolute;
@@ -161,6 +179,7 @@ hr {
   background-color: var(--primary);
   border-radius: 10px;
 }
+/* Penyesesuaian padding & font-size */
 .identity-bg > .container > h1 {
   margin: 0 0 1.5rem;
   color: var(--accent1);
@@ -174,6 +193,7 @@ hr {
   color: var(--accent0);
 }
 
+/* Latar belakang dengan efek dekoratif */
 .background {
   pointer-events: none;
   position: absolute;
@@ -183,6 +203,7 @@ hr {
   transform: translate(-50%, -50%);
 }
 
+/* Kondisi yang akan membuat web responsif di tampilan mobile menggunakan media query */
 @media (max-width: 901px) {
   .everything-container {
     flex-flow: column;

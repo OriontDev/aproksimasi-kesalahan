@@ -1,12 +1,25 @@
+// impor sumber daya kebutuhan
 import { useState } from 'react'
 import BackgroundCanvas from './BackgroundCanvas';
 
+
+// Memulai pendefinisian aplikasi
 export default function App() {
+
+  // State yang menyimpan data nilai internal
   const [nomer, setNomer] = useState("");
   const [hasil, setHasil] = useState(0);
   const [revealIdentity, setRevealIdentity] = useState(false);
 
 
+  // Fungsi yang melakukan operasi pembulatan
+  function Satuan() {
+    const angka = nomer;
+    const pembulatan = Math.round(angka);
+    setHasil(pembulatan);
+  }
+
+  // Prosesnya mirip
   function Puluhan() {
     const angka = nomer
     const pembulatan = Math.round(angka / 10) * 10;
@@ -25,12 +38,6 @@ export default function App() {
     setHasil(pembulatan);
   }
 
-  function Satuan() {
-    const angka = Number(nomer);
-    const pembulatan = Math.round(angka);
-    setHasil(pembulatan);
-  }
-
 
   const onInputChange = v => {
     v = Number(v);
@@ -39,32 +46,43 @@ export default function App() {
     setNomer(v === 0 ? "" : v);
   };
 
+  // Fungsi yang akan menunjukkan pop up identitas kelompok
   const toggleReveal = _ => setRevealIdentity(!revealIdentity);
 
 
   return (
     <>
-      <BackgroundCanvas />
+      {/* Tampilan Latar */}
+      <BackgroundCanvas /> 
+      {/* Pop up identitas */}
       {<Identity onClick={toggleReveal} transparency={revealIdentity ? 1 : 0} revealed={revealIdentity} />}
       <div className='everything-container'>
         <div className='converter-container'>
+          {/* Judul */}
           <div className='title-container' onClick={toggleReveal}>
             <h1 className='title-text'>Aproksimasi<br/>Kesalahan</h1>
             <h1 className='subtitle-text'>Pembulatan Angka Satuan</h1>
           </div>
-          <input type='number' placeholder='Masukkan angka' value={nomer} onChange={(e) => {onInputChange(e.target.value)}}/>
+          {/* Input angka yang akan dibulatkan */}
+          <input type='number' placeholder='Masukkan angka' value={nomer} 
+            onChange={(e) => {onInputChange(e.target.value)}}/>
           <div className='button-container'>
+            {/* Tombol yang akan melakukan operasi pembulatan */}
             <button onClick={Satuan}>Satuan</button>
             <button onClick={Puluhan}>Puluhan</button>
             <button onClick={Ratusan}>Ratusan</button>
             <button onClick={Ribuan}>Ribuan</button>
           </div>
+          {/* Tampilan hasil dari operasi pembulatan */}
           <div className='result-container'>
             <h2>Hasil</h2>
             <h1>{hasil}</h1>
           </div>
         </div>
+
         <hr />
+
+        {/* Paragraf pembahasan materi */}
         <div className='explanation-container'>
           <h2 className='explanation'>
             Pembulatan ke satuan puluhan, ratusan, dan ribuan adalah proses mendekatkan angka ke nilai terdekat berdasarkan digit tertentu.
@@ -80,7 +98,8 @@ export default function App() {
 
 function Identity({onClick, transparency, revealed}) {
   return (
-    <div className='identity-bg' onClick={onClick} style={{ opacity:transparency, pointerEvents: revealed ? '' : 'none' }}>
+    <div className='identity-bg' onClick={onClick} 
+      style={{ opacity:transparency, pointerEvents: revealed ? '' : 'none' }}>
       <div className='container'>
         <h1>Kelompok Pembuat</h1>
         <p>I Wayan Widhyadana Sadhu Gunawan <span className='hg'>/ 15</span></p>
